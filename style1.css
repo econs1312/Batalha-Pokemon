@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #ff1a1a;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.boss-section, .battle-section, .challenger-section {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card {
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.pokemon-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.queue-section, .winners-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#queue-display {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.queue-item {
+    background-color: #e1f5fe;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%
+    min-width: 200px;
+}
+
+button {
+    background-color: #ff1a1a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#battle-display {
+    min-height: 100px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+#battle-result {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.winner {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.loser {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.winner-card {
+    background-color: #dff0d8;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.winner-card img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.attack-animation {
+    animation: attack 0.3s;
+}
+
+@keyframes attack {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        flex-direction: column;
+    }
+    
+    .boss-section, .battle-section, .challenger-section {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .queue-item {
+        width: 100%;
+    }
+}
